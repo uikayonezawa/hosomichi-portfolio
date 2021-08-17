@@ -1,0 +1,25 @@
+<div class="frame2" style="background-color: transparent;">  
+
+  <%= form_tag('/papers', method: :post) do %>
+    <h2>
+      Submit papers
+    </h2>
+    <p><input type="text" name="author" placeholder="authors"></p>
+    <p><input type="text" name="title" placeholder="title"></p>
+    <p><input type="string" name="journal" placeholder="journal name"></p>
+    <p><input type="string" name="number" placeholder="journal number"></p>
+
+    <p><input type="date" name="published" placeholder="published date"></p>
+    <p><input type="text" name="published_url" placeholder="url of published "></p>
+    
+    <p><input type="date" name="firstappeared" placeholder="the first appeared date"></p>
+    <p><input type="text" name="firstappeared_url" placeholder="url of the first appeared"></p>
+    
+    <p><input type="text" name="category" placeholder="key words"></p>
+    <p><input type="integer" name="fiscalyear" placeholder="fiscalyear"></p>
+    <p></p>
+    
+       <p><input type="submit" value="SEND"></p>
+  <% end %>
+
+</div>

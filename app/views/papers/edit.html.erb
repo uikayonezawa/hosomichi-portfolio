@@ -1,0 +1,18 @@
+<div class="frame2" style="background-color: transparent;">  
+
+<%= form_tag("/papers/#{@paper.id}", method: :patch ) do %>
+<h3> 編集する
+</h3>
+    <input type="text" name="author" value="<%= @paper.author %>" placeholder="Author">
+    
+    <textarea name="title" placeholder="string" rows="10" cols="30">
+        <%= @paper.title %>
+    </textarea>
+    
+    
+    
+
+<input type="submit" value="SENT">
+<% end %>
+
+</div>

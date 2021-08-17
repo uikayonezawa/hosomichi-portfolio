@@ -1,0 +1,20 @@
+      <div class="frame2">
+      <h2>Members</h2>
+      
+      <div class="parent_mem">
+        
+        <% @members.each do |member| %>
+        <div class="child b1">
+            <a href=""><p class="circle1" style="background-image: url('<%= member.image %>')"; ></p></a>
+            <ul class="mem">
+              <li><span class="role"><%= member.role %></span> <%= member.surname %> <%= member.name %></li>
+              <li><p><%= member.affiliation %><p><%= member.position %></p></p></li>
+            </ul>
+        </div>
+        <% end %>
+      </div><!---pareant--->
+
+          <p style="margin:135px 0 0 0;"><a href=""></a></p>
+          
+</div>
+

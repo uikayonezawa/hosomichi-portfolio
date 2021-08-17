@@ -1,0 +1,663 @@
+html {
+    font-family: serif;
+    /**"yuGothic", sans-serif;**/
+    /**box-sizing: border-box; **/
+}
+
+body {
+    margin: 0;         /* 余白の削除 */
+    padding: 0;        /* 余白の削除 */
+    width:100%;
+    height:100%;
+    color: #333;
+    background-color: "#000";
+    font-size: 12pt;
+}
+
+a {
+    text-decoration:none; 
+}
+
+/**@media screen and (max-width: 1024px) {}
+　/* 1024pxまでの幅の場合に適応される */
+
+@media screen and (min-width: 481px) { } /*スマートフォン横】*/
+@media screen and (min-width: 769px) { } /*タブレット縦以上*/
+
+/* header */
+header {
+    height: 90px;
+    width: 100%;
+    /***background-color:#ffc0cb;/***ピンク***/
+    /***background-color: #fff;***/
+    background-color:rgba(255,255,255,0.8);
+    position: fixed;
+    top: 0;
+    z-index: 1;
+}
+
+.header_area {
+    height: 100%;
+    width: 1024px;
+    margin: 0 auto;
+    /****background-color: #87cefa;水色***/
+}
+
+.logo {
+    height: 100%;
+    float: left;
+    width: 40%;
+    margin:0;
+    font:serif;
+}
+
+/**.logo1, .logo2 {
+    height:50%;}**/
+
+.logo1{
+    height:40px;
+    display: table-cell;
+    vertical-align: bottom;
+}
+
+.logo1 p{margin: 2px 0 3px 5px;
+    font-size:15px;
+}
+
+.logo2 a {color:#333;}
+
+
+
+h2 {font-weight: normal;
+}
+
+
+.gnav {
+    float: right;
+    height: 100%;
+    width: 55%;
+    padding-right: 0px;
+    font-weight: bold;
+    font-size: 13pt;
+    /***background-color: #fff000;***/
+}
+
+
+/*全てのリスト・リンク共通*/
+
+.user, .access, .gnav_menu{
+    height: 21px;
+    margin: 3px 3px;
+    text-align: right;
+}
+
+
+
+.access  {
+    font-family: sans-serif;
+     border-radius:2px;
+    color: #fff;
+    /* font-size: 16px; */
+    padding: 4px;
+    font-weight: lighter;
+}
+
+.access a { 
+    color: #a2a2a2; /***#61CBE2;***/
+    font-size:13px;
+    list-style: none;
+}
+
+.access a font{
+    font-family: sans-serif;
+    padding: 4px;
+    border-radius:2px;
+    color: #fff;
+    font-weight: lighter;
+}
+
+.user a:hover, .access a:hover {color: #00ced1;
+}
+
+    
+.gnav_menu{
+    display: flex;
+    list-style: none;
+    float: right;
+}
+.gnav_menu li {
+    margin-left: 23px;
+}
+.gnav_menu li a {
+    color: #333; /**#009bbf;**/
+}
+.gnav_menu li a:hover {
+    color: #00ced1;/**#1900BC;**/
+}
+
+.gnav_menu li ul{   /* ※A */
+   width: 90px; /* メニュー1項目の横幅(135px) */
+   /* border-top: 1px solid pink; 項目上側の枠線(ピンク色で1pxの実線) */
+   list-style: none;
+   padding:0;
+   margin-left: -23px;
+}
+
+
+ul ul {
+magin:0;
+  visibility: hidden;
+  opacity: 0;
+  transition: .2s ease-in-out;
+}
+ul li:hover > ul {
+  visibility: visible;
+  opacity: 1;
+}
+
+
+.gnav_menu li ul li {
+    text-align: start;
+    width: 130px;
+background-color: rgba(255, 255, 255, 0.8);
+/**background-color: #e0ffff;**/
+}
+
+.gnav_menu li ul li a {   /* ※B */
+   line-height: 35px;   /* サブメニュー1項目の高さ(35px) */
+   text-align: left;    /* 文字列の配置(左寄せ) */
+   padding-left: 0px;   /* 文字列前方の余白(5px) */
+   font-weight: bold; /* 太字 */
+}
+
+
+.gnav_menu li ul li a:hover {   /* ※C */
+ 
+   /*background-color: #ffff80; /* サブメニュー項目にマウスが載ったときの背景色(淡い黄色) */
+   color: #00ced1;            /* サブメニュー項目にマウスが載ったときの文字色(濃い緑色) */
+}
+
+
+
+.wrapper{
+    background-color:#f3f3f3;
+    height: 100%;
+    min-height: 100vh;
+    width: 100%;
+    position: relative;/*←相対位置*/
+    padding-bottom: 90px;/*←footerの高さ*/
+    box-sizing: border-box;
+}
+
+/*.contents */
+.contents{
+    width:100%;
+    min-height: calc(100vh - 90px);
+    /**line-height: 1.6;
+    margin: 0 auto;
+    padding-top: 20px;
+    width: 800px;**/
+}
+
+
+.frame1, .frame2 {
+ 
+    width: 1024px;
+    margin: 0 auto;
+    padding-top: 90px;
+    box-sizing: border-box;
+}
+
+frame2{
+    
+}
+
+
+/***top***/
+.frame1{
+    text-align: center;
+    width: 100vw;
+    background-image: url("https://www.grips.ac.jp/cms/wp-content/themes/grips2014sp6/common/img/top/bannerBG.jpg"); 
+    background-size: cover;
+    background-position: bottom;
+    opacity: 0.8;
+}
+
+
+h2 div {width: 80%;}
+
+h3{font-size: 12pt;}
+
+
+
+
+/******/
+.my_area span{
+    display: inline-block;
+    vertical-align: top;
+    padding-bottom:3px;
+}
+
+.my_name{
+}
+
+.my_button{
+    margin-top: 7px;
+    margin-left: -60px;
+}
+
+.my_button ul{
+    margin-top: -10px;
+    list-style: none;
+}
+
+
+.my_button ul li a{
+    color: #4682b4;
+    font-family: sans-serif;
+
+
+}
+
+.my_button ul li ul {
+margin-left: -23px;
+
+}
+.my_button ul li ul li {
+float:left;
+padding: 0 5px 0 5px;
+wiidth: 40px;
+    
+}
+
+
+
+/***projects***/
+
+.tpimg, .tpimg_rayer{
+
+  /**background-position: center center;**/
+  background-position: 50% 60%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: calc(100vh - 90px);
+}
+
+.tpimg{
+    background-image: url("https://cdn.pixabay.com/photo/2017/10/04/09/56/chemist-2815640__480.jpg");
+}
+.tpimg_rayer{
+      background-color: rgba(255, 255, 255, 0.1);
+}
+
+.frame4{
+    /**background-color: transparent;**/
+}
+
+ #projects{
+background-color:rgba(255,255,255,0.3);
+ }
+ 
+
+/***outcomes***/
+
+
+.plan{
+    background-color: #fff;
+    width:  868px;
+    height: 500px;
+    border: 6px solid #add8e6;
+    border-radius: 50px;
+    background-size: cover;
+    margin: 0 auto;
+    vertical-align: middle;
+}
+
+.project_logo{
+    padding-top: 20px;
+}
+
+.f_inner1{
+  /***background-color: #cfcfcf;***/
+  margin-bottom: 40px;
+}
+.f_inner2 {text-align: center;
+}
+
+
+/***
+.HalfBanner{
+    width:234px;
+    height: 60px;
+    background-color: #5383c3;
+    text-align: center;
+}
+***/
+
+/***news***/
+table {
+    width:100%;
+    height:0;
+    /**background-color:#fff ; /***#eaf4fc #e3e9f1;***/
+    margin-bottom: 0px;
+
+border-collapse: collapse;
+vertical-align: middle;
+text-align: left;
+}
+
+table p{margin:0}
+
+table, td, th {margin-top:10px;
+    border-bottom: #b3b3b3 1px solid;
+     vertical-align: bottom;
+}
+
+
+.td1{ 
+    width: 100px;
+    padding-left: 10px;
+}/***日付***/
+
+.td1 p{
+    font-size: smaller;
+    font-weight: normal;
+    color: #ed6d3d;
+}
+.td2{ 
+    width: 900px;
+    padding-right:5px;
+    line-height: 1.3em;
+    /**font-family: sans-serif;**/
+    font-weight: lighter;
+
+}
+
+.td2 a{
+    color: #555;
+}
+    
+.td2 a:hover {
+    color: #00ced1;
+}
+
+
+/***projects, members***/
+
+.parent{width: 100%;}
+.parent div{ margin-top: 10px;
+}
+
+.parent {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: justify;
+  /***justify-content: space-around;***/
+  flex-wrap: wrap;
+  /***width: auto; ***/
+ justify-content: flex-start;
+ /*** flex-direction: row;***/
+}
+
+
+/***projects
+.bg_img{
+width: 300px;
+height: 250px;
+text-align: left; 
+/***border:solid gray 1px; ***/
+/**background-size: cover;**/
+/**display: table-cell;**/
+/***margin: 0 20px 30px 20px;
+font: bold "メイリオ";
+}
+
+.child_prj{
+width: 300px;
+height: 100%;
+background-size:cover;
+background-position:50%;
+position: relative;
+}
+
+.child_prj::after {
+  content: '';
+  background-color: rgba(0,0,0,.4);
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.text_prj, .name_prj, .term_prj{
+  padding: 0.8em;
+  font-size:1.0rem;
+  color: #FFF;
+
+  font-weight: normal;
+  position: relative;
+  z-index: 1;
+}
+
+.text_prj{
+    height: 9em;
+    vertical-align: top;
+      font-size: 17px;
+}
+
+.term_prj, .name_prj{
+    width: 270px;
+    padding: 0;
+    margin: 0 auto;
+    vertical-align: bottom;
+    text-align: right;
+    font-weight: normal;
+    line-height: 1.4em;
+}
+
+.term_prj{
+    border-top: solid 2px #fff;
+    height: 1em;   
+}
+.name_prj{
+    height: 1em;
+}
+projects***/
+
+
+
+/***矢印ボタン
+    .more {
+      position: absolute;
+      cursor: pointer;
+      top: 0px;
+      right: 10px;
+      z-index: 2;
+      text-align: right;
+      
+      &:hover ul.more_list {
+        display: block;
+      }
+      
+      ul.more_list {
+        position: absolute;
+        padding: 0 1em;
+        margin: 0.5em 0;
+        list-style: none;
+        width: 40px;
+        top: 0.8em;
+        right: 0;
+        font-size: 14px;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        display: none;
+        box-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+        border-radius: 3px;
+        
+        li {
+          border-bottom: 1px solid #ddd;
+          &:last-child {
+            border-bottom: 0;
+          }
+        
+          a {
+            display: block;
+            padding: 5px;
+           
+            }
+          }
+        }
+      }
+    
+矢印ボタン***/
+
+
+/***members***/
+.child {
+
+width: 180px;
+height: auto;
+padding: 0px;
+  background-size:cover;
+  background-position:50%;
+  position: relative;
+font: bold "メイリオ";
+
+}
+
+.b1, .b2, .b3 {margin: 0 auto; }
+/***
+.b1{background-color: rgba(255,0,0,0.5);}
+.b2{background-color: rgba(0,255,0,0.5);}
+.b3{background-color: rgba(255,255,0,0.5);}
+***/
+
+.mem{
+     list-style: none;
+     text-align: left;
+     text-align:center;
+     width: 100%;
+}
+
+
+/***members frame5***/
+.circle1{
+    width:  160px;
+    height: 140px;
+    border: 2px solid #e0ffff;/***#add8e6***/
+    border-radius: 50%;
+    background-size: cover;
+    margin: 0 auto;
+}
+
+.role{
+  background: -webkit-linear-gradient(left, #add8e6 10%, #ffffe0);
+  background: -moz-linear-gradient(left, #add8e6 10%, #ffffe0);
+  background: -o-linear-gradient(left, #add8e6 10%, #ffffe0);
+  background: linear-gradient(to right, #add8e6 10%, #ffffe0);
+    padding: 3px;
+}
+
+
+/***outcomes***/
+
+
+.carousel { 
+
+    box-sizing: border-box; 
+}
+
+.carousel {
+  background: #222;
+  padding: 20px 0;
+}
+
+.carousel-cell {
+  width: 100%;
+  height: calc(100vh - 380px);
+  /***margin-right: 10px;***/
+  /* center images in cells with flexbox */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-cell-image {
+  display: block;
+  max-height:100%;
+}
+
+
+.carousel.is-fullscreen .carousel-cell {
+  /***max-height: 100%;***/
+}
+
+.carousel.is-fullscreen .carousel-cell-image {
+  max-height: 100%;
+}
+
+/* line 445, /home/ec2-user/environment/ssite01/app/assets/stylesheets/mainstyle.scss */
+.pagenate {
+  
+  margin: 40px 0 20px 0;
+  text-align: center;
+}
+
+/* line 450, /home/ec2-user/environment/ssite01/app/assets/stylesheets/mainstyle.scss */
+.first a, .prev a, .next a, .last a {
+  font-size: small;
+  /*枠線をなくす*/
+  color: #646464;
+}
+
+/* line 456, /home/ec2-user/environment/ssite01/app/assets/stylesheets/mainstyle.scss */
+.prev a {
+  margin-right: 10px;
+}
+
+/* line 457, /home/ec2-user/environment/ssite01/app/assets/stylesheets/mainstyle.scss */
+.next a {
+  margin-left: 10px;
+}
+
+/* line 459, /home/ec2-user/environment/ssite01/app/assets/stylesheets/mainstyle.scss */
+.page {
+  margin-right: 5px;
+  margin-left: 5px;
+  color: #00a7db;
+  font-weight: bold;
+
+}
+
+/* line 464, /home/ec2-user/environment/ssite01/app/assets/stylesheets/mainstyle.scss */
+.page a {
+  font-weight: normal;
+  color: #646464;
+
+}
+/*papers*/
+
+.papers{
+padding-top: 5px;
+border-bottom: #b3b3b3 2px solid;
+line-height: 0.7em;
+font-size: smaller;
+}
+
+
+/*footer*/
+footer{
+    height: 90px;
+    width:100%;
+    position: absolute;/*←絶対位置*/
+    bottom: 0; /*下に固定*/
+
+    background-color:#fff; /**#e0ffff;**/
+    text-align: center;
+    vertical-align: bottom;
+}
+
+footer p {
+    color: #c2c2c2;
+}

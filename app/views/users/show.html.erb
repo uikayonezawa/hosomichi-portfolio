@@ -1,0 +1,47 @@
+<div class="frame2" style="background-color: transparent;">  
+
+<h2><%= @nickname %>'s page</h2>
+  
+  <div class="parent">
+    
+    <div>
+    <h3><%= @nickname %>'s news</h3>
+    
+    <% @newinfos.each do |newinfo| %>
+          <div class="Leaderboard">
+            <table>
+            <tr>
+            <th class="td1"><p style= "color:#333;"><%= newinfo.updated_at.strftime('%Y/%m/%d') %></p></th>
+            <th class="td2"><a href="<%= newinfo.url %>"><p><%= newinfo.title %></p></a></th>
+            </tr>
+            </table>
+          </div>
+    <% end %>
+    
+    </div>
+    
+    
+    <div>
+    <h3><%= @nickname %>'s papers</h3>
+    
+    <% @papers.each do |paper| %>
+    
+        
+
+
+      <div class="papers">
+
+        <p><%= paper.author %></p> 
+        <p>"<%= paper.title %>"</p> 
+        <p><%= paper.journal %>, <%= paper.number %></p>
+        <p><a href="<%= paper.published_url %>"><%= paper.published_url %></a> , published on <%= paper.published %></p>
+        <p><a href="<%= paper.firstappeared_url %>"><%= paper.firstappeared_url %></a>, first appeared on <%= paper.firstappeared %></p> 
+        <p><%= paper.category %></p>
+        <p><%= paper.fiscalyear %></p> 
+      </div>  
+    <% end %>
+    </div>
+      
+  </div><!---parent--->
+    
+</div>
