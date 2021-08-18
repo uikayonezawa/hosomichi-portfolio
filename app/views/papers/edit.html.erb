@@ -3,11 +3,14 @@
 <%= form_tag("/papers/#{@paper.id}", method: :patch ) do %>
 <h3> 編集する
 </h3>
-    <input type="text" name="author" value="<%= @paper.author %>" placeholder="Author">
-    
-    <textarea name="title" placeholder="string" rows="10" cols="30">
-        <%= @paper.title %>
-    </textarea>
+    <p>Authors: <input type="text" name="author" value="<%= @paper.author %>" placeholder="Author"></p>
+    <p>Subtitle: <textarea name="title" placeholder="string" rows="10" cols="30"><%= @paper.title %></textarea></p>
+    <p>Journal name: <input type="text" name="journal" value="<%= @paper.journal %>" placeholder="Journal name"></p>
+    <p>Journal info: <input type="text" name="number" value="<%= @paper.number %>" placeholder="Journal info"></p>
+    <p>Published date: <input type="date" name="published" value="<%= @paper.published %>" placeholder="Published date"></p>
+    <p>Published URL: <input type="text" name="published_url" value="<%= @paper.published_url %>" placeholder="URL of Published"></p>
+    <p>First appearanced date: <input type="date" name="firstappeared" value="<%= @paper.firstappeared %>" placeholder="Firstappeared date"></p>
+    <p>First appearanced URL: <input type="text" name="firstappeared_url" value="<%= @paper.firstappeared_url %>" placeholder="URL of Firstappeared"></p>
     
     
     

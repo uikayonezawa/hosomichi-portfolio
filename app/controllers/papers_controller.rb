@@ -2,7 +2,7 @@ class PapersController < ApplicationController
     before_action :move_to_index, except: :index
   
     def index
-    @papers = Paper.includes(:user).order('updated_at DESC').page(params[:page]).per(5)
+    @papers = Paper.includes(:user).order('firstappeared DESC').page(params[:page]).per(5)
 
     end
     

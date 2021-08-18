@@ -1,20 +1,21 @@
-      <div class="frame2">
+<div class="frame2" style="background-color: transparent;">  
+
       <h2>Members</h2>
       
-      <div class="parent_mem">
         
         <% @members.each do |member| %>
-        <div class="child b1">
+       <div class="child b1"> 
             <a href=""><p class="circle1" style="background-image: url('<%= member.image %>')"; ></p></a>
-            <ul class="mem">
-              <li><span class="role"><%= member.role %></span> <%= member.surname %> <%= member.name %></li>
-              <li><p><%= member.affiliation %><p><%= member.position %></p></p></li>
-            </ul>
+            <div class="mem">
+              <p><%= member.surname %> <%= member.name %> /</p>
+              <p><%= member.surname_in_alphabet.upcase %> <%= member.name_in_alphabet %>,</p>
+              <p style="font-size:smaller"><%= member.role %></p>
+            </div>
         </div>
         <% end %>
-      </div><!---pareant--->
 
-          <p style="margin:135px 0 0 0;"><a href=""></a></p>
-          
+<div class="pagenate">
+
+</div>  
+        
 </div>
-

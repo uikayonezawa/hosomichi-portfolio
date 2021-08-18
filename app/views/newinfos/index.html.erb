@@ -1,10 +1,6 @@
-<div class="contents">
-  
-
 <div class="frame2" style="background-color: transparent;">  
-  
-        <h2>News</h2> 
-<div class="user">
+    <h2>News</h2>
+        <div class="user">
         <% if user_signed_in? %>  
           <div class="grid-6">
               <span class="user_nav">
@@ -19,11 +15,10 @@
           <div class="grid-6">
               <span class="user_nav">
                   <p style="font-size:14px; font-family:sans-serif;">Submit news? please log in above.</p> 
-                <p></p>  
               </span>
           </div>
         <% end %>
-        </div>
+        </div><!---user--->
 
 
         <div class="parent">
@@ -42,6 +37,4 @@
         <div class="pagenate">
           <%= paginate(@newinfos) %>
         </div>     
-          
-</div>
-</div>
+</div><!---frame--->          
