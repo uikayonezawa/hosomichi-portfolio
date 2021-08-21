@@ -1,59 +1,66 @@
 <div class="frame3" style="background-color: transparent;">  
   
-        <h2>Papers</h2>
+    <h2>Papers</h2>
         
-        <div class="user">
-        <% if user_signed_in? %>  
-          <div class="grid-6">
-             <span class="user_nav">
+        <div class="search_area">
+            <div class="search">
+            <%= form_tag('/papers/search', method: :get) do %>
+                <input class="search__query" name="keyword" placeholder="by author or subject" type="text" value="">
+                <button class="btn-search" title="検索" type="submit">
+                <i class="icon-search">Search</i>
+                </button>
+                </input>
+            <% end %>
+            </div>
+             
+            <div class="user_submit">
+            <% if user_signed_in? %>  
+                <span class="user_nav">
                 <%= link_to( "/papers/new") do %>
-                <font style="padding:4px;font-family:sans-serif;color:#fff; background:#86B0D2; border-radius:3px;">
+                <font style="padding:4px;font-family:sans-serif; font-size: smaller; color:#fff; background:#86B0D2; border-radius:3px;">
                     submit papers</font>
                 <% end %>
-             </span>
-          </div>
-        <% else %>
-          <div class="grid-6">
-              <span class="user_nav">
-                <p style="font-size:14px; font-family:sans-serif;">Submit papers? please log in above.</p>
-              </span>
-          </div>
-        <% end %>
-        </div>
-        
-        
+                </span>
+            <% else %>
+                <span class="user_nav">
+                <p style="font-size:14px; font-family:sans-serif;">Submit papers? please log in.</p>
+                </span>
+            <% end %>
+            </div><!---class user_submit--->
+        </div><!---class search area--->
+
 
     <% @papers.each do |paper| %>
     <div class="papers">
             
-           <p><%= paper.author %></p> 
+         <p><%= paper.author %></p> 
          <p class="paper_title">"<%= paper.title %>"</p> 
          <p><%= paper.journal %>, <%= paper.number %></p>
          <p><a href="<%= paper.published_url %>"><%= paper.published_url %></a> , published on <%= paper.published %></p>
          <p><a href="<%= paper.firstappeared_url %>"><%= paper.firstappeared_url %></a>, first appeared on <%= paper.firstappeared %></p> 
          <p><%= paper.category %></p>
-         <p><%= paper.fiscalyear %></p>
-        
+
         
         <div class="my_area">     
         <% if user_signed_in? && current_user.id == paper.user_id %> 
-        
             <span class="my_name"> 
             　<a href="/users/<%= paper.user_id %>">
                 <font style="color:#ff8c00; font-family:sans-serif;"> <%= paper.user.nickname %></font>
           　   </a>
             </span>
             
-            
             <span class="my_button">
                 <ul><li>
                 <a><%= image_tag 'arrow072_09.png' %></a> 
-                <ul class="">
+                <ul>
                     <li>
-                    <font><%= link_to '編集 ', "/papers/#{paper.id}/edit", method: :get %></font>
+                    <%= link_to 'Details', "/papers/#{paper.id}", method: :get, class: "my-nav" %>
                     </li>
                     <li>
-                    <%= link_to '削除', "/papers/#{paper.id}", method: :delete %>
+                    <%= link_to 'Edit', "/papers/#{paper.id}/edit", method: :get, class: "my-nav" %>
+                    </li>
+                    <li>
+                    <%= link_to 'Delete', "/papers/#{paper.id}", method: :delete, class: "my-nav" %>
                     </li>
                 </ul>
                 </li></ul>
@@ -62,14 +69,13 @@
         <% end %>
         </div>
 
-         
-    
-        
-    </div>  
+    </div><!---class papers--->  
     <% end %>
+
         
 <div class="pagenate">
 <%= paginate(@papers) %>
 </div>  
+
         
 </div>

@@ -1,0 +1,82 @@
+  <div class="frame3">
+              
+              <h3>Search Papers</h3>
+                
+  <div class="search_area">
+                
+              <div class="search">
+              <%= form_tag('/papers/search', method: :get) do %>
+                <input class="search__query" name="keyword" placeholder="by author or subject" type="text" value=""><button class="btn-search" title="検索" type="submit">
+                  <i class="icon-search">Search</i></button>
+              </input>
+              <% end %>
+              </div>
+              
+          <div class="gnav_menu_backbutton">
+          <font style="font-size:smaller; font-weight:noemal;">Return to</font> 
+          <a href="https://5880f51288a5409a8268120a387f467a.vfs.cloud9.ap-northeast-1.amazonaws.com/papers" >
+          Papers
+          </a>
+          </div>
+      
+  </div>
+          
+                <h3>
+                  Result
+                </h3>
+              
+              
+                  <% @papers.each do |paper| %>
+    <div class="papers">
+            
+           <p><%= paper.author %></p> 
+         <p class="paper_title">"<%= paper.title %>"</p> 
+         <p><%= paper.journal %>, <%= paper.number %></p>
+         <p><a href="<%= paper.published_url %>"><%= paper.published_url %></a> , published on <%= paper.published %></p>
+         <p><a href="<%= paper.firstappeared_url %>"><%= paper.firstappeared_url %></a>, first appeared on <%= paper.firstappeared %></p> 
+         <p><%= paper.category %></p>
+         <p><%= paper.fiscalyear %></p>
+        
+        
+        <div class="my_area">     
+        <% if user_signed_in? && current_user.id == paper.user_id %> 
+        
+            <span class="my_name"> 
+            　<a href="/users/<%= paper.user_id %>">
+                <font style="color:#ff8c00; font-family:sans-serif;"> <%= paper.user.nickname %></font>
+          　   </a>
+            </span>
+            
+            
+            <span class="my_button">
+                <ul><li>
+                <a><%= image_tag 'arrow072_09.png' %></a> 
+                <ul class="">
+                    
+                    <li>
+                    <%= link_to "詳細", paper_path(paper.id), method: :get %>
+                    </li>
+                    
+                    <li>
+                    <font><%= link_to '編集 ', "/papers/#{paper.id}/edit", method: :get %></font>
+                    </li>
+                    <li>
+                    <%= link_to '削除', "/papers/#{paper.id}", method: :delete %>
+                    </li>
+                </ul>
+                </li></ul>
+            </span>
+            
+        <% end %>
+        </div>
+
+         
+    
+        
+    </div><!---class papers--->  
+    <% end %>
+            
+            
+        
+          
+  </div>

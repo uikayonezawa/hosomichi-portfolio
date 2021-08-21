@@ -1,8 +1,9 @@
 <div class="frame2" style="background-color: transparent;">  
     <h2>News</h2>
+    
         <div class="user">
         <% if user_signed_in? %>  
-          <div class="grid-6">
+          <div class="">
               <span class="user_nav">
                 <%= link_to( "/newinfos/new") do %>
                 <font style="padding:4px;font-family:sans-serif;color:#fff; background:#86B0D2; border-radius:3px;">
@@ -12,9 +13,9 @@
               </span>
           </div>
         <% else %>
-          <div class="grid-6">
+          <div class="">
               <span class="user_nav">
-                  <p style="font-size:14px; font-family:sans-serif;">Submit news? please log in above.</p> 
+                  <p style="font-size:14px; font-family:sans-serif; color:#535353;">Submit news? please log in.</p> 
               </span>
           </div>
         <% end %>

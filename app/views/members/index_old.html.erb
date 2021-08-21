@@ -1,20 +1,44 @@
-      <div class="frame5">
+
+<div class="frame3" style="background-color: transparent;">  
+
       <h2>Members</h2>
-      
-      <div class="parent_mem">
-        
-        <% @members.each do |member| %>
-        <div class="child b1">
-            <a href="<%= member.link %>"><p class="circle1" style="background-image: url('<%= member.image %>')"; ></p></a>
-            <ul class="mem">
-              <li><span class="role"><%= member.role %></span> <%= member.surname %> <%= member.name %></li>
-              <li><p><%= member.affiliation %><p><%= member.position %></p></p></li>
-            </ul>
-        </div>
+  
+  <div class="user">
+        <% if user_signed_in? %>  
+          <div class="">
+              <span class="user_nav">
+                <%= link_to("") do %>
+                <font style="padding:4px;font-family:sans-serif;color:#fff; background:#86B0D2; border-radius:3px;">
+                    submit members</font>
+                <% end %>
+                
+              </span>
+          </div>
+        <% else %>
+          <div class="">
+              <span class="user_nav">
+                  <p style="font-size:14px; font-family:sans-serif; color:#535353;">Submit news? please log in above.</p> 
+              </span>
+          </div>
         <% end %>
-      </div><!---pareant--->
+  </div><!---user--->    
+  
+      
+        <% @members.each do |member| %>
+        
+         <span class="child b1"> 
+            <a href=""><p class="circle1" style="background-image: url('<%= member.image %>')"; ></p></a>
+            <span class="mem">
+              <p><%= member.surname %> <%= member.name %> /</p>
+              <p><%= member.surname_in_alphabet.upcase %> <%= member.name_in_alphabet %>,</p>
+              <p style="font-size:smaller"><%= member.role %></p>
+            </span>
+        </span>
+        
+        <% end %>
 
-          <p style="margin:135px 0 0 0;"><a href="">more news>></a></p>
-          
+
+<div class="pagenate">
+</div>  
+        
 </div>
-

@@ -1,0 +1,47 @@
+<div class="frame3">
+
+<div class="search_area">
+<div class="gnav_menu_backbutton">Return to 
+<a href="https://5880f51288a5409a8268120a387f467a.vfs.cloud9.ap-northeast-1.amazonaws.com/papers" >
+Papers
+</a></div>
+</div>
+
+<div class="papers" style="margin-top: 20px;">
+<%= form_for(@paper) do |f| %>
+<h3 style="color: #737373; margin-bottom: 30px;">[ ID: P<%= @paper.id %> ]</h3>
+   
+<p><%= @paper.author %></p> 
+         <p class="paper_title">"<%= @paper.title %>"</p> 
+         <p><%= @paper.journal %>, <%= @paper.number %></p>
+         <p><a href="<%= @paper.published_url %>"><%= @paper.published_url %></a> , published on <%= @paper.published %></p>
+         <p><a href="<%= @paper.firstappeared_url %>"><%= @paper.firstappeared_url %></a>, first appeared on <%= @paper.firstappeared %></p> 
+         <p> <font style=" font-size:small;">Categories</font>: <%= @paper.category %></p>
+         <p> <font style=" font-size:small;">Fiscal year</font>: <%= @paper.fiscalyear %></p>
+<% end %>
+</div>
+
+<div>    
+  <% if user_signed_in? && current_user.id == @paper.user_id %>
+      
+        
+        <span class="my_button_show" >
+        <ul>
+          <li>
+            <%= link_to 'Edit', "/papers/#{@paper.id}/edit", method: :get, class:"my_nav" %>
+          </li>
+          <li>
+            <%= link_to 'Delete', "/papers/#{@paper.id}", method: :delete, class:"my_nav" %>
+          </li>
+        </ul>
+        </span>
+      
+    <% end %>
+</div>      
+    
+
+
+    
+    
+  
+</div>

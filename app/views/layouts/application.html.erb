@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>sssssite</title>
+    <title>tttttsite</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -54,7 +54,9 @@
     <div class="logo">
       <div class="logo1"><p>Yonezawa Laboratory</p></div>
       <div class="logo2">
-      <a href="" style="text-decoration:none;"><h1>米澤研究室</h1></a>
+      <a href="https://5880f51288a5409a8268120a387f467a.vfs.cloud9.ap-northeast-1.amazonaws.com/" style="text-decoration:none;">
+        <h1>米澤研究室</h1>
+      </a>
       </div>
   
     </div>
@@ -62,19 +64,11 @@
     
   <div class="gnav">
         
-  
-  <div class="user">
-          <div class="grid-6">
-              <span class="user_nav">
-              </span>
-          </div>
-        
-  </div>
+        <div class="access"></div>
       
-        <div class="access">
+        <div class="user">
            <!--<div class="user">-->
-        <% if user_signed_in? %>  
-          <div class="grid-6">
+        <% if user_signed_in? %>
               <span class="user_nav">
                   <font color="#ff8c00"><%= current_user.nickname %></font>
                   <%= link_to( "/users/#{current_user.id}") do %>
@@ -85,15 +79,22 @@
                   <% end %>
 
               </span>
-          </div>
+          
         <% else %>
-          <div class="grid-6">
               <span class="user_nav">
-                  <%= link_to "Log-in", new_user_session_path, class: "post" %>
-                  <%= link_to "Sign-up", new_user_registration_path, class: "post" %>
+                  <%= link_to( new_user_session_path, method: :post) do %>
+                      <font style="background:#4682b4;">Log-in</font>
+                  <% end %>
+                  
+                  <%= link_to( new_user_registration_path, method: :get) do %>
+                      <font style="background:#4682b4;">Sign-up</font>
+                  <% end %>
+                   
+                  <!--- link_to "Log-in", new_user_session_path, class: "post" --->
+                  <!--- link_to "Sign-up", new_user_registration_path, class: "post" --->
                   
               </span>
-          </div>
+          
         <% end %>
         <!--</div>-->
         
@@ -103,7 +104,7 @@
         <ul class="gnav_menu">
             <li><a href="https://5880f51288a5409a8268120a387f467a.vfs.cloud9.ap-northeast-1.amazonaws.com/">About</a></a></li>
             <li><a href="https://5880f51288a5409a8268120a387f467a.vfs.cloud9.ap-northeast-1.amazonaws.com/newinfos">News</a></li>
-            <li><a href="#">Outcomes</a>
+            <li><a href="https://5880f51288a5409a8268120a387f467a.vfs.cloud9.ap-northeast-1.amazonaws.com/papers">Outcomes</a>
               <ul>
                 <li><a href="https://5880f51288a5409a8268120a387f467a.vfs.cloud9.ap-northeast-1.amazonaws.com/papers">&nbsp;Papers</a></li>
                 <li><a href="#">&nbsp;Presentations</a></li>
@@ -134,7 +135,10 @@
 
 <!--- フッター --->
 <footer id="footer">
-    <p>@2020 UikaHosomichi</p>
+    <p>Copyright@2020 Uika Hosomichi. All rights reserved.</p>
+    <div class="foot_note">
+    <p>All paper information is cited from " https://www.ipmu.jp/en ". / All images are royalty free and from " https://pixabay.com/ja/ ".</p>
+    </div>
 </footer>
 
 </div><!--- wrapper --->

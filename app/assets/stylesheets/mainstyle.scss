@@ -10,13 +10,11 @@ body {
     width:100%;
     height:100%;
     color: #333;
-    background-color: "#000";
     font-size: 12pt;
 }
 
-a {
-    text-decoration:none; 
-}
+a { text-decoration: none; }
+ul{ list-style: none;}
 
 /**@media screen and (max-width: 1024px) {}
 　/* 1024pxまでの幅の場合に適応される */
@@ -73,12 +71,12 @@ header {
     font-size: 13pt;
     /***background-color: #fff000;***/
 }
-.user, .access, .gnav_menu{
+.access, .user, .gnav_menu{
     height: 21px;
     margin: 3px 3px;
     text-align: right;
 }
-.access  {
+.user  {
     font-family: sans-serif;
      border-radius:2px;
     color: #fff;
@@ -86,19 +84,19 @@ header {
     padding: 4px;
     font-weight: lighter;
 }
-.access a { 
+.user a { 
     color: #a2a2a2; /***#61CBE2;***/
     font-size:13px;
     list-style: none;
 }
-.access a font{
+.user a font{
     font-family: sans-serif;
     padding: 4px;
     border-radius:2px;
     color: #fff;
     font-weight: lighter;
 }
-.user a:hover, .access a:hover {color: #00ced1;
+.access a:hover, .user a:hover {color: #00ced1;
 }
 
 .gnav_menu{
@@ -115,6 +113,7 @@ header {
 .gnav_menu li a:hover {
     color: #00ced1;/**#1900BC;**/
 }
+
 
 
 .gnav_menu li ul{   /* ※A */
@@ -160,13 +159,14 @@ ul li:hover > ul {
     background-color:#f3f3f3;
     height: 100%;
     min-height: 100vh;
-    width: 100%;
+    width: 100vh;
     position: relative;/*←相対位置*/
     padding-bottom: 90px;/*←footerの高さ*/
     box-sizing: border-box;
 }
 
 .contents{
+    background-color:#f3f3f3;
     width:100%;
     min-height: calc(100vh - 90px);
     /**line-height: 1.6;
@@ -179,6 +179,7 @@ ul li:hover > ul {
     width: 1024px;
     margin: 0 auto;
     padding-top: 90px;
+    padding-bottom: 30px;
     box-sizing: border-box;
     height: 100vh;
 }
@@ -201,6 +202,9 @@ h3{font-size: 12pt;}
 
 
 
+.user_search form{
+margin: 20px, 0, 10px, 0;
+}
 
 /******/
 .my_area span{
@@ -230,6 +234,63 @@ float:left;
 padding: 0 5px 0 5px;
 wiidth: 40px;
 }
+
+
+
+.my-nav{
+ padding:4px;
+ font-family:sans-serif;
+ color:#86B0D2; 
+ background:#fff; 
+ border-radius:3px;   
+}
+
+.my_button_show ul{
+    list-style: none;
+}
+.my_button_show ul li{
+    padding: 5px 0 5px 0;
+    margin: 0 0 0 -40px;
+}
+
+.my_button_show ul li a{
+ padding:4px;
+ font-size: smaller;
+ font-family:sans-serif;
+ color:#4682b4; 
+ background:#fff; 
+ border-radius:3px; 
+}
+
+
+.search_area{
+    margin: 0 0 30px 20px;
+}
+.search{
+    margin-bottom: 10px;
+}
+
+.user_submit
+{margin: 10px 0 0 0px;
+}
+
+
+.gnav_menu_backbutton{
+    margin: 0 0 20px 0px;
+}
+.gnav_menu_backbutton a {
+ padding:4px;
+ color:#333;
+ font-size: large;
+ font-weight: bold;
+ background:#fff; 
+ border-radius:3px; 
+}
+
+.gnav_menu_backbutton a:hover {
+    color: #00ced1;/**#1900BC;**/
+}
+
 
 
 
@@ -315,11 +376,21 @@ table, td, th {margin-top:5px;
   /***justify-content: space-around;***/
   flex-wrap: wrap;
   /***width: auto; ***/
- justify-content: flex-start;
- /*** flex-direction: row;***/
+  justify-content: flex-start;
+  /*** flex-direction: row;***/
 }
 
 /***members***/
+.members{
+ padding: 40px 0 40px 0;
+}
+
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+  
 .child {
 float: left;
 width: 256px;
@@ -372,6 +443,9 @@ font: bold "メイリオ";
 }
 
 
+
+
+
 /***outcomes***/
 
 
@@ -416,6 +490,7 @@ font: bold "メイリオ";
   
   margin: 40px 0 20px 0;
   text-align: center;
+  float: clear;
 }
 
 /* line 450, /home/ec2-user/environment/ssite01/app/assets/stylesheets/mainstyle.scss */
@@ -480,9 +555,14 @@ footer{
 }
 
 footer p {
+    font-size: smaller;
     color: #c2c2c2;
 }
 
+.foot_note{
+    line-height: 0.2;
+    margin: 0;
+}
 
 
 /***projects
