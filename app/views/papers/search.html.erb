@@ -1,6 +1,6 @@
   <div class="frame3">
               
-              <h3>Search Papers</h3>
+              <h3>Search</h3>
                 
   <div class="search_area">
                 
@@ -14,7 +14,7 @@
               
           <div class="gnav_menu_backbutton">
           <font style="font-size:smaller; font-weight:noemal;">Return to</font> 
-          <a href="https://5880f51288a5409a8268120a387f467a.vfs.cloud9.ap-northeast-1.amazonaws.com/papers" >
+          <a href="/papers" >
           Papers
           </a>
           </div>
@@ -54,14 +54,14 @@
                 <ul class="">
                     
                     <li>
-                    <%= link_to "詳細", paper_path(paper.id), method: :get %>
+                    <%= link_to "Details", paper_path(paper.id), method: :get %>
                     </li>
                     
                     <li>
-                    <font><%= link_to '編集 ', "/papers/#{paper.id}/edit", method: :get %></font>
+                    <font><%= link_to 'Edit', "/papers/#{paper.id}/edit", method: :get %></font>
                     </li>
                     <li>
-                    <%= link_to '削除', "/papers/#{paper.id}", method: :delete %>
+                    <%= link_to 'Delete', "/papers/#{paper.id}", method: :delete %>
                     </li>
                 </ul>
                 </li></ul>
