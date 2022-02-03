@@ -47,10 +47,15 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
+production:
+  <<: *default
+  database: sssssite_production
+  username: sssssite
+  password: <%= ENV['SSSSSITE_DATABASE_PASSWORD'] %>
 
 production:
 #半角スペース２個分の空白を開ける
   <<: *default
   adapter: postgresql
-  encoding: unicode
+  encoding: utf8
   pool: 5
