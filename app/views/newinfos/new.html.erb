@@ -1,12 +1,17 @@
 <div class="frame2" style="background-color: transparent;">  
-
+<div class="show">
+  
   <%= form_tag('/newinfos', method: :post) do %>
     <h2>
       Submit news
     </h2>
-    <p><input type="text" name="title" placeholder="news"></p>
-    <p><input type="text" name="linkto" placeholder="url"></p>
+    <p>Update on <input type="date" name="updated_at" placeholder="updated on"></p>
+    
+    <p><input type="text" name="title" placeholder="headline"></p>
+    <p><input type="text" name="linkto" placeholder="link site url"></p>
+    <p><input type="text" name="img" placeholder="image url"></p>
+
     <p><input type="submit" value="SEND"></p>
   <% end %>
 
-</div>
+</div></div>

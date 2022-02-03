@@ -1,5 +1,25 @@
-<div class="frame3" style="background-color: transparent;">  
-  
+<div class="frame2" style="background-color: transparent;">  
+
+        <div class="user">
+        <% if user_signed_in? %>  
+          <div class="">
+              <span class="user_nav">
+                <%= link_to( "/papers/new") do %>
+                <font style="padding:4px;font-family:sans-serif;color:#fff; background:#86B0D2; border-radius:3px;">
+                    submit papers</font>
+                <% end %>
+                
+              </span>
+          </div>
+        <% else %>
+          <div class="">
+              <span class="user_nav">
+                  <p style="font-size:14px; font-family:sans-serif; color:#535353;">Submit papers? please log in.</p> 
+              </span>
+          </div>
+        <% end %>
+        </div><!---user--->
+
     <h2>Papers</h2>
         
         <div class="search_area">
@@ -12,21 +32,6 @@
                 </input>
             <% end %>
             </div>
-             
-            <div class="user_submit">
-            <% if user_signed_in? %>  
-                <span class="user_nav">
-                <%= link_to( "/papers/new") do %>
-                <font style="padding:4px;font-family:sans-serif; font-size: smaller; color:#fff; background:#86B0D2; border-radius:3px;">
-                    submit papers</font>
-                <% end %>
-                </span>
-            <% else %>
-                <span class="user_nav">
-                <p style="font-size:14px; font-family:sans-serif;">Submit papers? please log in.</p>
-                </span>
-            <% end %>
-            </div><!---class user_submit--->
         </div><!---class search area--->
 
 

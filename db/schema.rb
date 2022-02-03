@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_18_055339) do
+ActiveRecord::Schema.define(version: 2022_01_29_121624) do
+
+  create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "user_id"
+    t.text "text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "newinfo_id"
+  end
 
   create_table "members", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "order"
@@ -19,8 +27,8 @@ ActiveRecord::Schema.define(version: 2021_08_18_055339) do
     t.string "role"
     t.string "affiliation"
     t.string "position"
-    t.date "begin"
-    t.date "end"
+    t.date "entered_on"
+    t.date "left_on"
     t.text "specialty"
     t.text "image"
     t.datetime "created_at", null: false
@@ -37,6 +45,7 @@ ActiveRecord::Schema.define(version: 2021_08_18_055339) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
+    t.text "img", null: false
   end
 
   create_table "papers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

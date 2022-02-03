@@ -1,0 +1,83 @@
+<div class="frame2" style="background-color: transparent;">  
+<!---<h3>Details</h3>--->
+
+<div class="newinfos" style="margin-top: 20px;">
+
+
+<%= form_for(@newinfo) do |f| %>
+
+        
+        <p>[ News ID: <%= @newinfo.id %> ]</p>
+        
+        <div class="smaller">
+        <p><strong>Updated: </strong><%= @newinfo.updated_at.strftime('%b %d, %Y') %></p>
+        <p><strong>Sender: </strong> <%= @newinfo.user.nickname %></p>
+        <p><strong>Headline:  </strong><%= @newinfo.title %></p> 
+   
+   
+        <div class="newinfo_img" >    
+        <img src="<%= @newinfo.img %>" width="340" height="200">
+        </div>
+    
+    <p><strong>Link: </strong>
+        <a href="<%= @newinfo.url %>"><font style="color:#333;"><%= @newinfo.url %></font></a>
+    </p>    
+   
+       </div>
+<% end %>         
+       
+        
+        <div class="comments_container"><div class="smaller"><strong>Comments: </strong></div>
+            <% if current_user %>
+              <% form_tag("/newinfos/#{@newinfo.id}/comments", method: :post) do %>
+              <textarea name="text" placeholder="Enter your comment." rows="2" cols="30"></textarea>
+              <input type="submit" value="SEND">
+              <% end %>
+            <% end %>
+        </div>
+
+
+
+<div class="smaller"> 
+<div class="comments">
+    <div>           
+    <% if user_signed_in? %>
+        <%= form_with(model: [@newinfo, @comment], local: true) do |form| %>
+        <%= form.text_area :text, placeholder: "Enter your comments.", rows: "2" %>
+        <%= form.submit "SEND" %>
+        <% end %>
+    <% else %>
+        <font style="color:#4682b4">__Please log in and give us your comments.__</font>
+    <% end %>
+    </div>
+          
+            
+    <% if @comments %>
+        <% @comments.each do |comment| %>
+         <p>
+         <strong><% link_to comment.user.nickname, "/users/#{comment.user_id}" %></strong>
+         <font style="color: #ed6d3d; font-size:small;"><%= comment.user.nickname %> </font><%= comment.text %>
+         </p>
+        <% end %>
+    <% end %>
+</div>
+</div> 
+  
+            
+            
+            
+         
+</div> 
+
+
+ 
+    
+        <div class="gnav_menu_backbutton">
+          <font style="font-size:smaller; font-weight:noemal;">Return to</font> 
+          <a href="/newinfos" >
+          News
+          </a>
+        </div>
+
+  
+</div>

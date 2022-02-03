@@ -1,0 +1,24 @@
+<div class="frame2" style="background-color: transparent;">  
+
+<div class="show">
+  <%= form_tag('/members', method: :post) do %>
+  
+    <h2>Submit members</h2>
+    
+    <p><input type="text" name="name" placeholder="name in Japanese"></p>
+    <p><input type="text" name="surname" placeholder="surame in Japanese"></p>
+    <p><input type="text" name="name_in_alphabet" placeholder="Name in alphabet"></p>
+    <p><input type="text" name="surname_in_alphabet" placeholder="SURNAME in alphabet"></p>
+    <p><input type="text" name="e_mail" placeholder="e-mail"></p>
+    <p><input type="text" name="image" placeholder="face photo url"></p>
+    <p><input type="text" name="role" placeholder="role in the lab"></p>
+    <p><input type="text" name="affiliation" placeholder="current affiliation"></p>
+    <p><input type="text" name="position" placeholder="current position"></p>
+    <p>Entered in the lab <input type="date" name="entered_on" placeholder="entered_on"></p>
+    <p>Graduated from the lab <input type="date" name="left_on" placeholder="graduated_on"></p>
+    <p><input type="submit" value="SEND"></p>
+
+  <% end %>
+  
+</div>
+</div>

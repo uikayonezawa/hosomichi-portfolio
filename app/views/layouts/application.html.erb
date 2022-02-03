@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>LaboManager</title>
+    <title>HosomichiLab</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -9,35 +9,13 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
     
-    
-     <!---
-    <script type="text/javascript">
-      WebFontConfig = {
-        google: { families: [ 'Unica+One::latin' ] }
-      };
-      (function() {
-        var wf = document.createElement('script');
-        wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
-          '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
-        wf.type = 'text/javascript';
-        wf.async = 'true';
-        var s = document.getElementsByTagName('script')[0];
-        s.parentNode.insertBefore(wf, s);
-      })();
-    </script>
-    --->
+
+  
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <script src="./js/sample.js"></script>   
-    <script src="./js.1/flickity.pkgd.min.js"></script>  
-
-<!---css--->       <link rel="stylesheet" href="./flickity-docs/flickity.min.css">
-<!-- JavaScript --><script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
-<!-- CSS -->       <link rel="stylesheet" href="https://unpkg.com/flickity-fullscreen@1/fullscreen.css">
-<!-- JavaScript --><script src="https://unpkg.com/flickity-fullscreen@1/fullscreen.js"></script>
-
+    
+    
 <!--- Google font
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Karla:wght@300&family=Roboto+Condensed&display=swap" rel="stylesheet">
@@ -52,10 +30,10 @@
 <div class="header_area">
   
     <div class="logo">
-      <div class="logo1"><p>Yonezawa Laboratory</p></div>
+      <div class="logo1"><p>Hosomichi Laboratory</p></div>
       <div class="logo2">
       <a href="/" style="text-decoration:none;">
-        <h1>米澤研究室</h1>
+        <h1>細道研究室</h1>
       </a>
       </div>
   
@@ -64,7 +42,7 @@
     
   <div class="gnav">
         
-        <div class="access"></div>
+        <!---<div class="access"></div>--->
       
         <div class="user">
            <!--<div class="user">-->
@@ -97,23 +75,62 @@
           
         <% end %>
         <!--</div>-->
-        
         </div>
+        
+        <div class="access"></div>
 
-        <nav>
-        <ul class="gnav_menu">
-            <li><a href="/.">About</a></a></li>
+        
+        
+ 
+<!-- ↓ハンバーガーメニューここから↓  -->
+	<div class="hamburger-demo-menubox">
+		<input id="hamburger-demo1" type="checkbox" class="input-hidden">
+		
+		<label for="hamburger-demo1" class="hamburger-demo-switch hamburger-demo-switch1">
+			<span class="hamburger-switch-line1"></span>
+		</label>
+		
+		<div class="hamburger-demo-menuwrap">
+			<ul class="hamburger-demo-menulist">
+				<li><a href="/">Top</a></a></li>
+            <li><a href="/sitemaps">About</a></a></li>
             <li><a href="/newinfos">News</a></li>
-            <li><a href="/papers">Outcomes</a>
-              <ul>
+            <li><a href="/papers">Papers</a></li>
+            <li><a href="/members">Members</a></li>
+			</ul>
+		</div>
+		<div class="hamburger-demo-cover"></div>
+	
+	</div>
+ <!--↑ハンバーガーメニューここまで↑ -->
+
+
+
+        <div class="gnav_menu">
+        <ul>
+            <li><a href="/">Top</a></a></li>
+
+            <li><a href="/sitemaps">About</a></a></li>
+            <li><a href="/newinfos">News</a></li>
+            <li><a href="/papers">Papers</a>
+              <!--<ul>
                 <li><a href="/papers">&nbsp;Papers</a></li>
                 <li><a href="#">&nbsp;Presentations</a></li>
-              </ul>
+              </ul>--->
             </li>
             <li><a href="/members">Members</a></li>
-            <li><a href="#footer">bottom</a></li>
+           <!--<li><a href="#footer">bottom</a></li>--->
         </ul>
-        </nav>
+        </div>
+        
+
+
+
+
+
+
+        
+        </div>
         
     </div><!---gnav--->
 </div><!---header_area--->
@@ -136,8 +153,9 @@
 <!--- フッター --->
 <footer id="footer">
     <p>Copyright@2020 Uika Hosomichi. All rights reserved.</p>
-    <div class="foot_note">
-    <p>All paper information is cited from " https://www.ipmu.jp/en ". / All images are royalty free and from " https://pixabay.com/ja/ ".</p>
+    <div class="smaller">
+    <p><span>All paper information is cited from " https://www.ipmu.jp/en ". </span>
+    All images are royalty free at " https://pixabay.com/ja/ ".</p>
     </div>
 </footer>
 

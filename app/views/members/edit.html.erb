@@ -1,0 +1,29 @@
+<div class="frame2" style="background-color: transparent;">  
+
+<div class="show">
+<%= form_tag("/members/#{@member.id}", method: :patch ) do %>
+<h2> Edit member info
+</h2>
+    <p>Name jp: <input type="text" name="name" value="<%= @member.name %>" placeholder="Name jp"></p>
+    <p>Surname jp: <input type="text" name="submit" value="<%= @member.surname %>" placeholder="Surname jp"></p>
+    <p>Name en: <input type="text" name="name_in_alphabet" value="<%= @member.name_in_alphabet %>" placeholder="Name en"></p>
+    <p>Surname en: <input type="text" name="surname_in_alphabet" value="<%= @member.surname_in_alphabet %>" placeholder="Surname en"></p>
+    <p>Photo image: <input type="text" name="image" value="<%= @member.image %>" placeholder="Image URL"></p>
+    
+    
+    <p>Role in the Lab: <input type="text" name="role" value="<%= @member.role %>" placeholder="Role in the lab"></p>
+    <p>Specialty: <input type="text" name="specialty" value="<%= @member.specialty %>" placeholder="Specialty"></p>
+    <p>Graduated form the Lab: <input type="date" name="left_on" value="<%= @member.left_on %>" placeholder="Graduated form the Lab"></p>
+
+    <p>Current affiliation: <input type="text" name="affiliation" value="<%= @member.affiliation %>" placeholder="Affiliation"></p>
+    <p>Current position: <input type="text" name="position" value="<%= @member.position %>" placeholder="Position"></p>
+    
+    <p>E-mail: <input type="text" name="e_mail" value="<%= @member.e_mail %>" placeholder="E-mail"></p>
+    
+    
+
+<input type="submit" value="SENT">
+<% end %>
+</div>
+
+</div>

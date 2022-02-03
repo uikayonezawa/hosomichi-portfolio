@@ -4,16 +4,22 @@ Rails.application.routes.draw do
     root  'projects#index'
     
     get 'projects' => 'projects#index'
-     
-    resources :newinfos 
-    resources :members
+    
+    resources :newinfos do
+      resources :comments, only: [:create]
+    end
+    
+    resources :users, only: [:index, :show]
     
     resources :papers do
     collection do
       get 'search'
+      end
     end
-    end
+  
+    resources :members
     
-    get 'users/:id' => 'users#show'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+    resources :sitemaps, only: [:index]
+  
+  
 end

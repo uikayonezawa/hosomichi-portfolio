@@ -1,8 +1,10 @@
 class UsersController < ApplicationController
     
     def show
-    @nickname = current_user.nickname
-    @newinfos = current_user.newinfos.order("updated_at DESC").page(params[:page])
+    user = User.find(params[:id])
+    @nickname = user.nickname
+    @newinfos = user.newinfos.order("updated_at DESC")
+    
     @papers = current_user.papers.order("updated_at DESC").page(params[:page])
 
     end

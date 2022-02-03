@@ -1,8 +1,11 @@
-<div class="frame3" style="background-color: transparent;">  
+<div class="frame2" style="background-color: transparent;">  
+
+
+<div class="show">
 
 <%= form_tag("/papers/#{@paper.id}", method: :patch ) do %>
-<h3> Edit
-</h3>
+<h2> Edit paper info
+</h2>
     <p>Authors: <input type="text" name="author" value="<%= @paper.author %>" placeholder="Author"></p>
     <p>Subtitle: <textarea name="title" placeholder="string" rows="10" cols="30"><%= @paper.title %></textarea></p>
     <p>Journal name: <input type="text" name="journal" value="<%= @paper.journal %>" placeholder="Journal name"></p>
@@ -18,4 +21,5 @@
 <input type="submit" value="SENT">
 <% end %>
 
+</div>
 </div>

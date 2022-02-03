@@ -6,5 +6,8 @@ class User < ApplicationRecord
          
   has_many :newinfos
   has_many :papers
+  has_many :members
+  
+  has_many :comments, dependent: :destroy
   
 end

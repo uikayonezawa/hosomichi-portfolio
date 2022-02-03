@@ -1,5 +1,5 @@
 class NewinfosController < ApplicationController
-   before_action :move_to_index, except: :index
+   before_action :move_to_index, except: [:index, :show]
   
   def index
     # productsテーブルから最新順に作品を２０件取得する
@@ -12,7 +12,9 @@ class NewinfosController < ApplicationController
 
   def show
     # productsテーブルから該当するidの作品情報を取得し@productの変数へ代入する処理を書いて下さい
-    @newinfos = Newinfos.new # 問題3ではこのコードは消して新しくコードを書いてください
+    @newinfo = Newinfo.find(params[:id])
+    @comments = @newinfo.comments.includes(:user)
+    @comment =Comment.new
   end
 
   def search
@@ -20,12 +22,17 @@ class NewinfosController < ApplicationController
     @newinfos = []
   end
   
-   def create 
-     Newinfo.create(title: newinfo_params[:title], url: newinfo_params[:url], user_id: current_user.id)
+   def creat
+     Newinfo.create(title: newinfo_params[:title], 
+     url: newinfo_params[:url], 
+     img: newinfo_params[:img], 
+     updated_at: newinfo_params[:updated_at], 
+     user_id: current_user.id)
+     Commnet.create
    end
    private
    def newinfo_params
-   params.permit(:title, :url)
+   params.permit(:title, :url, :img, :updated_at )
    end
    
   def move_to_index

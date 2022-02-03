@@ -1,12 +1,13 @@
-<div class="frame3" style="background-color: transparent;">  
+<div class="frame2" style="background-color: transparent;">  
   
-  <h3>Details</h3>
 
 
 <div class="papers" style="margin-top: 20px;">
 <%= form_for(@paper) do |f| %>
-<h3 style="color: #737373; margin-bottom: 30px;">[ ID: P<%= @paper.id %> ]</h3>
+
+<p style="margin: 20px 0px;">[ Paper ID: <%= @paper.id %> ]</p>
    
+<div>
 <p><%= @paper.author %></p> 
          <p class="paper_title">"<%= @paper.title %>"</p> 
          <p><%= @paper.journal %>, <%= @paper.number %></p>
@@ -15,6 +16,8 @@
          <p> <font style=" font-size:small;">Categories</font>: <%= @paper.category %></p>
          <p> <font style=" font-size:small;">Fiscal year</font>: <%= @paper.fiscalyear %></p>
 <% end %>
+</div>
+
 </div>
 
 <div>    

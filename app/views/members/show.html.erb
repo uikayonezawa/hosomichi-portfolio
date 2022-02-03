@@ -1,0 +1,52 @@
+<div class="frame2" style="background-color: transparent;">  
+<div class="members" style="margin-top: 20px;">
+    
+<%= form_for(@member) do |f| %>
+
+        <p>[ News ID: <%= @member.id %> ]</p>
+        
+        <div class="photo"> 
+            <p class="circle1" style="background-image: url('<%= @member.image %>')"; >
+            </p>
+        </div>
+            
+            <div class="smaller">
+              <p><strong>Name jp/ en :　</strong><%= @member.surname %> <%= @member.name %> / 
+              <%= @member.surname_in_alphabet.upcase %> <%= @member.name_in_alphabet %>,</p>
+              <p><strong>Role in the Lab :　</strong><%= @member.role %></p>
+              
+              <p><strong>Specialty :　</strong><%= @member.specialty %></p>
+              
+              <p><strong>Graduated form the Lab :　</strong><%= @member.left_on %></p>
+              <p><strong>Current affiliation :　</strong><%= @member.affiliation %></p>
+              <p><strong>Current position :　</strong><%= @member.position %></p>
+            
+            <p><strong>E-mail :　</strong><%= @member.e_mail %> <font style="font-size:smaller">　　 *Please change [at] to @ </font></p>
+            
+  
+<% end %>
+</div>
+
+   <div>    
+    <% if user_signed_in? && current_user.id == @member.user_id %>
+        <span class="my_button_show" >
+        <ul>
+          <li>
+            <%= link_to 'Edit', "/members/#{@member.id}/edit", method: :get, class:"my_nav" %>
+          </li>
+          <li>
+            <%= link_to 'Delete', "/members/#{@member.id}", method: :delete, class:"my_nav" %>
+          </li>
+        </ul>
+        </span>
+    <% end %>
+    </div>
+    
+        <div class="gnav_menu_backbutton">
+          <font style="font-size:smaller; font-weight:noemal;">Return to</font> 
+          <a href="/members" >
+          Members
+          </a>
+        </div>
+        
+</div>

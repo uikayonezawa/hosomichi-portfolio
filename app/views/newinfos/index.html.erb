@@ -1,5 +1,4 @@
 <div class="frame2" style="background-color: transparent;">  
-    <h2>News</h2>
     
         <div class="user">
         <% if user_signed_in? %>  
@@ -21,14 +20,17 @@
         <% end %>
         </div><!---user--->
 
+    <h2>News</h2>
 
         <div class="parent">
           <% @newinfos.each do |newinfo| %>
           <div class="Leaderboard">
             <table>
             <tr>
-            <th class="td1"><p><%= newinfo.updated_at.strftime('%Y/%m/%d') %></p></th>
-            <th class="td2"><a href="<%= newinfo.url %>"><p><%= newinfo.title %></p></a></th>
+            <th class="td1"><p><%= newinfo.updated_at.strftime('%b %d, %Y') %></p></th>
+            
+            <th class="td2"><p><%= link_to "#{newinfo.title}", "/newinfos/#{newinfo.id}", method: :get %></p></th>
+
             </tr>
             </table>
           </div>
