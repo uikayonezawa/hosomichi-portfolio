@@ -22,14 +22,15 @@ class NewinfosController < ApplicationController
     @newinfos = []
   end
   
-   def creat
-     Newinfo.create(title: newinfo_params[:title], 
-     url: newinfo_params[:url], 
-     img: newinfo_params[:img], 
+   def create
+     Newinfo.create(title: newinfo_params[:title],
+     url: newinfo_params[:url],
+     img: newinfo_params[:img],
      updated_at: newinfo_params[:updated_at], 
      user_id: current_user.id)
-     Commnet.create
+     Comment.create
    end
+   
    private
    def newinfo_params
    params.permit(:title, :url, :img, :updated_at )
