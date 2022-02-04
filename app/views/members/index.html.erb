@@ -51,7 +51,7 @@
     
     <h2>Seniors</h2>   
     <% @members.each do |member| %>  
-       <% unless member.left_on.blank? then %>
+       <% if member.left_on.present? then %>
     
        <div >
        <p><%= member.surname %> <%= member.name %> / <%= member.surname_in_alphabet.upcase %> <%= member.name_in_alphabet %> 

@@ -1,11 +1,12 @@
 class MembersController < ApplicationController
+    before_action :move_to_index, except: [:index, :show]
+
   def index
       @members = Member.includes(:user).order(order: "ASC")
   end
   
 def new 
 end
-
 
 
 def create 

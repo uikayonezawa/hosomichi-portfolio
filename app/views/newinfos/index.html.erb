@@ -27,7 +27,7 @@
           <div class="Leaderboard">
             <table>
             <tr>
-            <th class="td1"><p><%= newinfo.updated_at.strftime('%b %d, %Y') %></p></th>
+            <th class="td1"><p><%= newinfo.updated_at&.strftime('%b %d, %Y') %></p></th>
             
             <th class="td2"><p><%= link_to "#{newinfo.title}", "/newinfos/#{newinfo.id}", method: :get %></p></th>
 
