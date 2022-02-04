@@ -27,7 +27,7 @@
   
         
     <% @members.each do |member| %>  
-      <% if member.left_on.nil? then %>
+      <% if member.left_on.blank? then %>
       
         <div class="child b1"> 
             
@@ -37,7 +37,8 @@
             <div class="mem">
               <p><%= member.surname %> <%= member.name %>  
               <%= link_to "▶︎", "/members/#{member.id}", method: :get, class: "my-nav" %>
-              </p > 
+              </p
+              > 
               <p><%= member.surname_in_alphabet.upcase %> <%= member.name_in_alphabet %></p>
               <p style="font-size:smaller"><%= member.role %></p>
             </div><!---mem--->
@@ -50,12 +51,11 @@
     
     <h2>Seniors</h2>   
     <% @members.each do |member| %>  
-       <% unless member.left_on.nil? then %>
+       <% unless member.left_on.blank? then %>
     
        <div >
        <p><%= member.surname %> <%= member.name %> / <%= member.surname_in_alphabet.upcase %> <%= member.name_in_alphabet %> 
-         <%= link_to "▶︎", "/members/#{member.id}", method: :get, class: "my-nav" %>
-       </p>
+       <%= link_to "▶︎", "/members/#{member.id}", method: :get, class: "my-nav"%></p>
        </div>
        <% end %>
     <% end %>

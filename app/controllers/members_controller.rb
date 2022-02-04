@@ -52,4 +52,8 @@ def member_params
   params.permit(:name, :surname, :name_in_alphabet, :surname_in_alphabet, :e_mail, :role, :affiliation, :position, :entered_on, :left_on, :specialty, :image, :order )
 end
 
+def move_to_index
+  redirect_to action: :index unless user_signed_in?
+end
+
 end
