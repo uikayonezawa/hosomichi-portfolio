@@ -27,7 +27,7 @@
   
         
     <% @members.each do |member| %>  
-      <% if member.left_on.blank? then %>
+      <% unless member.left_on.present? then %>
       
         <div class="child b1"> 
             
