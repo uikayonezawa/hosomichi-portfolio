@@ -79,7 +79,23 @@
 </div> 
 
 
- 
+<div>    
+  <% if user_signed_in? && current_user.id == @newinfo.user_id %>
+      
+        
+        <span class="my_button_show" >
+        <ul>
+          <li>
+            <%= link_to 'Edit', "/newinfos/#{@newinfo.id}/edit", method: :get, class:"my_nav" %>
+          </li>
+          <li>
+            <%= link_to 'Delete', "/newinfos/#{@newinfo.id}", method: :delete, class:"my_nav" %>
+          </li>
+        </ul>
+        </span>
+      
+    <% end %>
+</div> 
     
         <div class="gnav_menu_backbutton">
           <font style="font-size:smaller; font-weight:noemal;">Return to</font> 
