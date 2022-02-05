@@ -9,6 +9,30 @@ class NewinfosController < ApplicationController
   def new 
   end
   
+  def create
+     Newinfo.create(title: newinfo_params[:title],
+     url: newinfo_params[:url],
+     img: newinfo_params[:img],
+     updated_at: newinfo_params[:updated_at], 
+     user_id: current_user.id)
+     Comment.create
+  end
+   
+    def destroy
+    newinfo = Newinfo.find(params[:id])
+    newinfo.destroy if newinfo.user_id == current_user.id
+    end
+    
+    def edit
+    @newinfo = Newinfo.find(params[:id])
+    end
+    
+    def update
+    newinfo = Newinfo.find(params[:id])
+     if newinfo.user_id == current_user.id
+        newinfo.update(newinfo_params) 
+     end
+    end
 
   def show
     # productsテーブルから該当するidの作品情報を取得し@productの変数へ代入する処理を書いて下さい
@@ -22,14 +46,7 @@ class NewinfosController < ApplicationController
     @newinfos = []
   end
   
-   def create
-     Newinfo.create(title: newinfo_params[:title],
-     url: newinfo_params[:url],
-     img: newinfo_params[:img],
-     updated_at: newinfo_params[:updated_at], 
-     user_id: current_user.id)
-     Comment.create
-   end
+  
    
    private
    def newinfo_params

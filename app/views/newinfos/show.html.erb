@@ -52,14 +52,23 @@
     </div>
           
             
-    <% if @comments %>
+<% if @comments %>
         <% @comments.each do |comment| %>
          <p>
          <strong><% link_to comment.user.nickname, "/users/#{comment.user_id}" %></strong>
-         <font style="color: #ed6d3d; font-size:small;"><%= comment.user.nickname %> </font><%= comment.text %>
+         <font style="color: #ed6d3d; font-size:small;"><%= comment.user.nickname %> </font>
+         <%= comment.text %>
+         
+         <% if user_signed_in? && current_user.id == comment.user_id %> 
+          <span>
+          <%= link_to 'Delete', newinfo_comment_path(@newinfo, comment), method: :delete, class: "my-nav" %>
+          </span>
+         <% end %>
+         
          </p>
         <% end %>
-    <% end %>
+<% end %>
+
 </div>
 </div> 
   
