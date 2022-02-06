@@ -49,7 +49,8 @@
     
     </div>
     
-    <h2>Seniors</h2>   
+    <h2>Seniors</h2>
+    <div class="show">
     <% @members.each do |member| %>  
        <% if member.left_on.present? then %>
     
@@ -59,7 +60,7 @@
        </div>
        <% end %>
     <% end %>
- 
+    </div> 
         
     
         

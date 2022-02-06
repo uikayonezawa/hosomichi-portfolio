@@ -1,8 +1,5 @@
 <div class="frame2" style="background-color: transparent;">  
-<!---<h3>Details</h3>--->
-
 <div class="newinfos" style="margin-top: 20px;">
-
 
 <%= form_for(@newinfo) do |f| %>
 
@@ -12,7 +9,7 @@
         <div class="smaller">
         <p><strong>Updated: </strong><%= @newinfo.updated_at.strftime('%b %d, %Y') %></p>
         <p><strong>Sender: </strong> <%= @newinfo.user.nickname %></p>
-        <p><strong>Headline:  </strong><%= @newinfo.title %></p> 
+        <p><strong>Headline:  </strong><font size="3px"><%= @newinfo.title %></font></p> 
    
    
         <div class="newinfo_img" >    
@@ -61,7 +58,7 @@
          
          <% if user_signed_in? && current_user.id == comment.user_id %> 
           <span>
-          <%= link_to 'Delete', newinfo_comment_path(@newinfo, comment), method: :delete, class: "my-nav" %>
+          <%= link_to 'Delete', newinfo_comment_path(@newinfo, comment), method: :delete, class: "my-nav2" %>
           </span>
          <% end %>
          

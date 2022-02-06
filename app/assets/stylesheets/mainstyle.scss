@@ -273,13 +273,20 @@ wiidth: 40px;
 
 
 
-.my-nav{
+.my-nav, .my-nav2{
  padding:4px;
  font-family:sans-serif;
  color:#86B0D2; 
  background:#fff; 
  border-radius:3px;   
 }
+
+.my-nav2{
+    color: #5DAEF1;
+ padding:3px;
+ border-radius:7px;   
+}
+
 
 .my_button_show ul{
     list-style: none;
@@ -668,31 +675,6 @@ footer p {
 
 
 
-/*　ハンバーガーボタン　*/
-
-
-
-
-/* 769px以下に適用されるCSS（タブレット用） */
-@media screen and (max-width: 769px) {
-
-
-.logo{
-    top: 40px;
-}    
-
-/*
-.logo2 h1 {
-    padding: 4px;
-    font-size: 20px;
-}  */
-    
-
-
-
-
-
-}
 
 
 /* hamburgerここから */
@@ -794,6 +776,17 @@ footer p {
 		display: none;
 	}
 	
-	
-
 }
+
+
+@media screen and (max-width: 413px) {
+    
+.logo{
+    margin: 10px 0 10px 10px;}  
+
+
+    
+.logo2 h1 {
+    font-size: 20px;}  
+}    
+
