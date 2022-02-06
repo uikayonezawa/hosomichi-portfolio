@@ -44,7 +44,7 @@ header {font-family: serif;
     width: 100%;
     /***background-color:#ffc0cb;/***ピンク***/
     /***background-color: #fff;***/
-    background-color:rgba(255,255,255,0.8);
+    background-color:rgba(255,255,255,0.9);
     position: fixed;
     top: 0;
     z-index: 1;
@@ -787,6 +787,11 @@ footer p {
 
     
 .logo2 h1 {
-    font-size: 20px;}  
+    font-size: 20px;} 
+    
+.tpimg_message p font {
+    font-size: 18px;
+    font-weight: bold;
+}
 }    
 
